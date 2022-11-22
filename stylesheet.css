@@ -1,1 +1,82 @@
 /* stylesheet for koto search project */
+
+.header {
+
+    display: flex;
+    padding: 5px 0px 0px;
+
+}
+
+
+
+.header-logo {
+
+    display: flex;
+    flex-direction: column;
+    font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 5px 0px 0px;
+
+}
+
+
+
+.header-partner {
+
+    display: flex;
+    padding: 5px 0px 0px;
+    font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+
+}
+
+.header-links {
+
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px 0px;
+
+}
+
+.header-link {
+
+    padding: 5px 0px 0px;
+    color: #606060;
+
+
+}
+
+.header-link:link {
+
+    white-space: nowrap;
+    color: #606060;
+    padding: 5px 0px 0px;
+    font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+
+}
+
+.header-link:visited {
+
+    white-space: nowrap;
+    padding: 5px 0px 0px;
+    font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+
+}
+
+.header-link:hover {
+
+    white-space: nowrap;
+    padding: 5px 0px 0px;
+    font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+
+}
+
+.header-link:active {
+
+    white-space: nowrap;
+    padding: 5px 0px 0px;
+    font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+
+}

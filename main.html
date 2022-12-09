@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="stylesheet.css">
     <title>Search - for sale</title>
 </head>
@@ -33,12 +35,12 @@
         </div>
 
 
-        <div class="header_links">
+        <nav class="header_links">
             <a href="https://test.kotohomes.com/" class="header_link">Home</a>
             <a href="https://test.kotohomes.com/calculator/mortgage" class="header_link">Mortgage Calculator</a>
             <a href="https://test.kotohomes.com/calculator/affordability" class="header_link">Affordablility Calculator</a>
             <a href="https://test.kotohomes.com/calculator/rent-vs-buy" class="header_link">Rent vs Buy Calculator</a>
-        </div>
+        </nav>
 
     </div>
 
@@ -57,85 +59,239 @@
     </div>
 
     <div class="filter_bar">
-        <div class="">
-            FIND
-            <nav>
-                <input type="text">
-            </nav>
-        </div>
-        <div class="">
-            CATEGORY
-            <nav>
-                <select name="" id="">
-                    <option value="">For rent</option>
-                    <option value="">For sale</option>
-                </select>
-            </nav>
-        </div>
-        <div class="">
-            TYPE
-            <nav>
-                <select name="" id="">
-                    <option value="">Any</option>
-                    <option value="">Commercial</option>
-                    <option value="">Lots/Land</option>
-                    <option value="">Multi-family</option>
-                    <option value="">Residential</option>
-                </select>
-            </nav>
-        </div>
-        <div class="">
-            BEDS
-            <nav>
-                <select name="" id="">
-                    <option value="">Any</option>
-                    <option value="">Studio</option>
-                    <option value="">1+</option>
-                    <option value="">2+</option>
-                    <option value="">3+</option>
-                    <option value="">4+</option>
-                    <option value="">5+</option>
-                    <option value="">6+</option>
-                    <option value="">7+</option>
-                    <option value="">8+</option>
-                </select>
-            </nav>
-        </div>
-        <div class="">
-            BATHS
-            <nav>
-                <select name="" id="">
-                    <option value="">Any</option>
-                    <option value="">1+</option>
-                    <option value="">1.5+</option>
-                    <option value="">2+</option>
-                    <option value="">3+</option>
-                    <option value="">4+</option>
-                    <option value="">5+</option>
-                    <option value="">6+</option>
-                    <option value="">7+</option>
-                    <option value="">8+</option>
-                </select>
-            </nav>
-        </div>
-        <div class="">
-            PRICE
-            <nav>
-                <select name="" id="">
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-            </nav>
-        </div>
-        <div class="">
-            MORE
-            <div class="more_dropdown">
 
+        <div class="filter_col">
+            <label for="find" class="filter_label">FIND</label>
+            <div>
+                <input type="text" class="filter_search" placeholder="Type a location">
             </div>
         </div>
-        <div class="">
-            <button type="button">RESET</button>
+
+        <div class="filter_col">
+            <label for="category" class="filter_label">CATEGORY</label>
+            <div>
+                <select name="category" id="category" class="filter_select">
+                    <option value="for_rent">For rent</option>
+                    <option value="for_sale">For sale</option>
+                </select>
+            </div>
         </div>
+
+        <div class="filter_col">
+            <label for="type" class="filter_label">TYPE</label>
+            <div>
+                <select name="type" id="type" class="filter_select">
+                    <option value="any">Any</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="lots_land">Lots/Land</option>
+                    <option value="multifamily">Multi-family</option>
+                    <option value="residential">Residential</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter_col">
+            <label for="beds" class="filter_label">BEDS</label>
+            <div>
+                <select name="beds" id="beds" class="filter_select">
+                    <option value="any">Any</option>
+                    <option value="studio">Studio</option>
+                    <option value="1+">1+</option>
+                    <option value="2+">2+</option>
+                    <option value="3+">3+</option>
+                    <option value="4+">4+</option>
+                    <option value="5+">5+</option>
+                    <option value="6+">6+</option>
+                    <option value="7+">7+</option>
+                    <option value="8+">8+</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter_col">
+            <label for="baths" class="filter_label">BATHS</label>
+            <div>
+                <select name="baths" id="baths" class="filter_select">
+                    <option value="any">Any</option>
+                    <option value="1+">1+</option>
+                    <option value="1.5+">1.5+</option>
+                    <option value="2+">2+</option>
+                    <option value="3+">3+</option>
+                    <option value="4+">4+</option>
+                    <option value="5+">5+</option>
+                    <option value="6+">6+</option>
+                    <option value="7+">7+</option>
+                    <option value="8+">8+</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter_col">
+            <label for="price" class="filter_label">PRICE</label>
+            <div>
+                <select name="price" id="price" class="filter_select">
+                    <div class="filter_price_col">
+                        <label for="from">FROM</label>
+                        <option value="any">Any</option>
+                        <option value="0">$0</option>
+                        <option value="25k">$25k</option>
+                        <option value="50k">$50k</option>
+                        <option value="75k">$75k</option>
+                        <option value="100k">$100k</option>
+                        <option value="125k">$125k</option>
+                        <option value="150k">$150k</option>
+                        <option value="175k">$175k</option>
+                        <option value="200k">$200k</option>
+                        <option value="250k">$250k</option>
+                        <option value="300k">$300k</option>
+                        <option value="400k">$400k</option>
+                        <option value="500k">$500k</option>
+                        <option value="600k">$600k</option>
+                        <option value="700k">$700k</option>
+                        <option value="800k">$800k</option>
+                        <option value="900k">$900k</option>
+                        <option value="1m">$1M</option>
+                        <option value="1.2m">$1.2M</option>
+                        <option value="1.3m">$1.3M</option>
+                        <option value="1.4m">$1.4M</option>
+                        <option value="1.5m">$1.5M</option>
+                        <option value="1.75m">$1.75M</option>
+                        <option value="2m">$2M</option>
+                        <option value="3m">$3M</option>
+                        <option value="4m">$4M</option>
+                        <option value="5m">$5M</option>
+                        <option value="">$10M</option>
+                    </div>
+                    <div class="filter_price_col">
+                        <label for="to">TO</label>
+                        <option value="any">Any</option>
+                        <option value="25k">$25k</option>
+                        <option value="50k">$50k</option>
+                        <option value="75k">$75k</option>
+                        <option value="100k">$100k</option>
+                        <option value="125k">$125k</option>
+                        <option value="150k">$150k</option>
+                        <option value="175k">$175k</option>
+                        <option value="200k">$200k</option>
+                        <option value="250k">$250k</option>
+                        <option value="300k">$300k</option>
+                        <option value="400k">$400k</option>
+                        <option value="500k">$500k</option>
+                        <option value="600k">$600k</option>
+                        <option value="700k">$700k</option>
+                        <option value="800k">$800k</option>
+                        <option value="900k">$900k</option>
+                        <option value="1m">$1M</option>
+                        <option value="1.2m">$1.2M</option>
+                        <option value="1.3m">$1.3M</option>
+                        <option value="1.4m">$1.4M</option>
+                        <option value="1.5m">$1.5M</option>
+                        <option value="1.75m">$1.75M</option>
+                        <option value="2m">$2M</option>
+                        <option value="3m">$3M</option>
+                        <option value="4m">$4M</option>
+                        <option value="5m">$5M</option>
+                        <option value="10m">$10M</option>
+                        <option value="15m">$15M</option>
+                    </div>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter_col">
+            <button type="button" class="filter_button">MORE</button>
+        </div>
+
+        <div class="filter_col">
+            <button type="button" class="filter_button">RESET</button>
+        </div>
+        
+    </div>
+
+
+    <div class="filter_results">
+        <div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+            <div class="listing_result_box">
+                box
+            </div>
+        </div>
+        <div id='map' style='width: 50vh; height: 100vh;'></div>
+        <script>
+          mapboxgl.accessToken = 'pk.eyJ1IjoibXRib3JyZW4iLCJhIjoiY2xiZmpvMWxvMDBneDNvcDd0NGRrb2VudyJ9.lpsl3f7L_Goru_TF9T2R4w';
+          var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11'
+          });
+        </script>
     </div>
 
 

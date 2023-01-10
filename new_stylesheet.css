@@ -2,6 +2,7 @@ body {
 
     margin: 0px;
     background-color: whitesmoke;
+    text-decoration: none;
 
 }
 
@@ -189,6 +190,8 @@ body {
 
     border: 1px solid #414342;
     background-color: #414342;
+    text-decoration: none;
+    color: white;
     padding: 8px 0px 16px;
     width: 50%;
     display: flex;
@@ -202,7 +205,11 @@ body {
 
 }
 
+.map {
 
+    display: none;
+
+}
 
 
 
@@ -234,6 +241,13 @@ body {
         grid-template-columns: 1fr 1fr;
 
     }
+
+    .map {
+
+        display: none;
+
+    }
+
 
 }
 
@@ -268,6 +282,13 @@ body {
 
     }
 
+    .map {
+
+        display: none;
+
+    }
+
+
 
 
 }
@@ -283,8 +304,17 @@ body {
     .filter_menu {
 
         display: flex;
+        margin: 5px;
 
     }
+
+    .map {
+
+        display: none;
+
+    }
+
+
 
 }
 
@@ -295,5 +325,31 @@ body {
         display: none;
 
     }
+
+    .search_results {
+
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .results {
+
+        width: 80vw;
+        
+
+    }
+
+    .map {
+
+        display: flex;
+        justify-self: flex-start;
+        background-color: black;
+        width: 20vw;
+        height: 100vh;
+
+    }
+
+
 
 }

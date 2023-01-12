@@ -112,8 +112,9 @@ body {
     background-color: #242524;
     color: white;
     margin: 0px;
-    height: 55px;
+    height: 70px;
     width: 100%;
+
 
 }
 
@@ -174,7 +175,7 @@ body {
     border: 2px solid #414342;
     background-color: gray;;
     width: 99%;
-    height: 45vh;
+    height: 400px;
 
 }
 
@@ -330,23 +331,41 @@ body {
 
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
 
     }
 
     .results {
 
-        width: 80vw;
+        width: 75vw;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr;
+        overflow: scroll;
         
+    }
+
+    .results::-webkit-scrollbar {
+
+        display: none;
 
     }
 
-    .map {
+    #map {
 
         display: flex;
         justify-self: flex-start;
-        background-color: black;
-        width: 20vw;
-        height: 100vh;
+        width: 25vw;
+        height: 101.5vh;
+
+    }
+
+}
+
+@media screen and (min-width: 1165px){
+
+    .results {
+
+        grid-template-columns: 1fr 1fr 1fr;
 
     }
 
